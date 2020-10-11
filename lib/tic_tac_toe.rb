@@ -114,3 +114,6 @@ def winner(board)
     return board[winning_array[0]] 
   end
 end
+
+def play(board)
+  until over?(board)
