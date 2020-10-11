@@ -33,18 +33,6 @@ def valid_move?(board, index)
   index.between?(0,8) && !position_taken?(board, index)
 end
 
-def turn(board)
-  puts "Please enter 1-9:"
-  input = gets.strip
-  index = input_to_index(input)
-  if valid_move?(board, index)
-    move(board, index)
-    display_board(board)
-  else
-    turn(board)
-  end
-end
-
 def turn_count(board)
   counter = 0 
   board.each do |elem|
@@ -61,6 +49,18 @@ def current_player(board)
   else 
     return "O"
   end
+
+def turn(board)
+  puts "Please enter 1-9:"
+  input = gets.strip
+  index = input_to_index(input)
+  if valid_move?(board, index)
+    move(board, index)
+    display_board(board)
+  else
+    turn(board)
+  end
+end
 
 def won?(board)
   if board.all? {|i| i == "" || i == " "}
