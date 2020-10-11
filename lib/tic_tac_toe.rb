@@ -124,4 +124,3 @@ def play(board)
   elsif draw?(board)
     puts "Draw"
   end
-end
