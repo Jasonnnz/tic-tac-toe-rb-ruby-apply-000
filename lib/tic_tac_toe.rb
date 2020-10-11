@@ -18,4 +18,10 @@ def display_board(board)
 end
 
 def input_to_index(input)
-  return index = input.to_i 
+  return index = input.to_i - 1 
+end
+
+def move(board, index, character)
+  return board[index] = character
+end
+
