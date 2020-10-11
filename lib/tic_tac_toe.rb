@@ -63,9 +63,6 @@ def turn(board)
 end
 
 def won?(board)
-  if board.all? {|i| i == "" || i == " "}
-    return false 
-  end
   WIN_COMBINATIONS.each do |win_combination|
     win_index_1 = win_combination[0]
     win_index_2 = win_combination[1]
@@ -79,11 +76,9 @@ def won?(board)
       return win_combination 
     elsif position_1 == "O" && position_2 == "O" && position_3 == "O"
       return win_combination
-    else
-      FALSE
     end
   end
-  FALSE
+  return FALSE
 end
 
 def full?(board)
