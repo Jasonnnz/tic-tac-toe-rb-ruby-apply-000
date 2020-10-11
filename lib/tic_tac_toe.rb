@@ -22,11 +22,11 @@ def input_to_index(input)
 end
 
 def move(board, index, player)
-  board[index] = player
+  return board[index] = player
 end
 
 def position_taken?(board, location)
-  board[location] != " " && board[location] != "" && board[location] != nil
+  !(board[location] == nil || board[location] == "" || board[location] == " ")
 end
 
 def valid_move?(board, index)
@@ -49,6 +49,7 @@ def current_player(board)
   else 
     return "O"
   end
+end
 
 def turn(board)
   puts "Please enter 1-9:"
@@ -115,7 +116,7 @@ def play(board)
     turn(board)
   end
   if won?(board)
-    puts "Congratulations #{winner(board)}!"
+    puts "Congradulations #{winner(board)}!"
   elsif draw?(board)
     puts "Cat's Game!"
   end
